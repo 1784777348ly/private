@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 - 运动功能表现</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .fade-in { animation: fadeIn 0.8s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-shield-alt text-2xl"></i>
+                    <h1 class="text-2xl font-bold">隐私政策</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="setLanguage('zh')" class="px-4 py-2 rounded-md bg-white/20">中文</button>
+                    <button onclick="setLanguage('en')" class="px-4 py-2 rounded-md text-white/80">English</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-6 py-8 max-w-4xl">
+        <div id="content-zh" class="bg-white rounded-xl shadow-lg p-8 fade-in">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">引言</h2>
+            <p class="text-gray-600">欢迎使用"运动功能表现"应用...</p>
+        </div>
+        
+        <div id="content-en" class="bg-white rounded-xl shadow-lg p-8 fade-in hidden">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Introduction</h2>
+            <p class="text-gray-600">Welcome to "Sports Performance" app...</p>
+        </div>
+    </div>
+
+    <script>
+        // 语言配置
+        const supportedLanguages = ['zh', 'en'];
+        let currentLanguage = 'en';
+
+        // 初始化语言
+        function initLanguage() {
+            // 1. 优先检查URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            
+            if (urlLang && supportedLanguages.includes(urlLang)) {
+                setLanguage(urlLang);
+            } else {
+                // 2. 检查localStorage
+                const savedLang = localStorage.getItem('preferredLanguage');
+                if (savedLang && supportedLanguages.includes(savedLang)) {
+                setLanguage(savedLang);
+            } else {
+                // 3. 检测浏览器语言
+                const browserLang = navigator.language.split('-')[0];
+                if (supportedLanguages.includes(browserLang)) {
+                    setLanguage(browserLang);
+                }
+            }
+        }
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // 隐藏所有语言内容
+            document.querySelectorAll('[id^="content-"]').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // 显示当前语言内容
+            const contentEl = document.getElementById(`content-${lang}`);
+            if (contentEl) {
+                contentEl.classList.remove('hidden');
+            }
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', initLanguage);
+    </script>
+</body>
+</html>
