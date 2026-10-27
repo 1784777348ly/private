@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私保护指引 - MATRIXEVAL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .header h1 {
+            font-size: 22px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        .update-info {
+            background: #f8f9fa;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            font-size: 17px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .permission-item {
+            margin-bottom: 16px;
+            padding: 12px;
+            border-left: 3px solid #4a90e2;
+            background: #fafbfc;
+            border-radius: 0 4px 4px 0;
+        }
+        .permission-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 6px;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 12px 0;
+        }
+        li {
+            margin-bottom: 6px;
+            color: #555;
+        }
+        p {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        .contact {
+            background: #f0f7ff;
+            padding: 16px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        .contact h3 {
+            margin-bottom: 8px;
+            color: #2980b9;
+        }
+        .highlight {
+            background: #fff8e6;
+            border-left: 3px solid #f0ad4e;
+            padding: 12px;
+            border-radius: 0 4px 4px 0;
+            margin: 12px 0;
+            color: #66512c;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #eaeaea;
+            font-size: 14px;
+            color: #666;
+        }
+        a {
+            color: #4a90e2;
+            word-break: break-all;
+        }
+        @media (max-width: 480px) {
+            body {
+                padding: 12px;
+            }
+            .container {
+                padding: 16px;
+            }
+            .header h1 {
+                font-size: 20px;
+            }
+            .section h2 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>隐私保护指引</h1>
+            <p>MATRIXEVAL</p>
+        </div>
+
+        <div class="update-info">
+            最后更新日期：2026年10月27日<br>
+            生效日期：2026年10月27日
+        </div>
+
+        <div class="section">
+            <h2>引言</h2>
+            <p>MATRIXEVAL（以下简称"本应用"）是一款用于连接与测试惯性测量单元（IMU）硬件的工具类应用。您可以通过蓝牙连接 IMU 设备，获取设备采集的加速度、角速度等惯性数据，在应用内查看数据曲线，并将数据保存或导出后自行分析。</p>
+            <div class="highlight">
+                本应用无需注册或登录，不收集您的姓名、手机号、身份证号等个人身份信息，也不会上传您的采集数据至任何服务器。
+            </div>
+            <p>本应用由常州坤维传感科技有限公司（以下简称"我们"）开发并运营。我们严格遵守《中华人民共和国个人信息保护法》等相关法律法规，本指引向您说明本应用如何处理与您相关的信息。</p>
+        </div>
+
+        <div class="section">
+            <h2>权限使用说明</h2>
+            <div class="permission-item">
+                <div class="permission-title">蓝牙权限</div>
+                <p>用于搜索并连接 IMU 硬件设备，接收设备采集的加速度、角速度等惯性数据，同时向设备下发开始采集、停止采集、清零等控制指令。</p>
+                <p>该权限仅在您主动连接设备时使用。拒绝授权将导致无法连接硬件，但应用可以正常启动和查看已有记录。</p>
+            </div>
+            <div class="permission-item">
+                <div class="permission-title">文件访问</div>
+                <p>用于将采集的数据导出为 CSV、Excel、ZIP 等文件并保存到您指定的位置，以及从"文件"应用导入设备固件升级包。</p>
+                <p>文件仅在您主动点击导出或导入时读写，不会被自动上传至任何服务器。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>我们收集的信息</h2>
+            <ul>
+                <li><strong>IMU 采集数据</strong>：硬件设备产生的加速度、角速度等惯性测量数据。此类数据仅保存在您的设备本地，不会上传至任何服务器。</li>
+                <li><strong>崩溃与诊断信息</strong>：应用版本、设备型号、操作系统版本、崩溃堆栈、崩溃发生时间。仅用于定位和修复程序缺陷。</li>
+                <li><strong>本地配置信息</strong>：您设置的采样频率、语言、隐私协议同意状态等，保存在设备本地。</li>
+            </ul>
+            <p><strong>我们不会收集：</strong>姓名、手机号、身份证号、位置信息、通讯录、照片、摄像头画面、麦克风录音、健康数据、支付信息，也不会将您的信息用于广告推送或跨应用追踪。</p>
+        </div>
+
+        <div class="section">
+            <h2>第三方 SDK</h2>
+            <div class="permission-item">
+                <div class="permission-title">腾讯 Bugly（崩溃监测）</div>
+                <p>用途：收集应用崩溃信息与运行异常，帮助开发者定位并修复问题，提升应用稳定性。</p>
+                <p>可能收集的信息：设备型号、操作系统版本、应用版本、崩溃堆栈、崩溃发生时间、设备标识符。</p>
+                <p>该 SDK 仅在您同意本隐私政策后才会初始化并开始工作。</p>
+                <p>隐私政策：<a href="https://privacy.qq.com/document/preview/fc748b3d96224fdb825ea79e132c1a56">腾讯 Bugly SDK 个人信息保护规则</a></p>
+            </div>
+            <p>除上述 SDK 外，本应用未集成其他会收集个人信息的三方 SDK，也未接入广告或数据分析平台。</p>
+        </div>
+
+        <div class="section">
+            <h2>信息使用方式</h2>
+            <ul>
+                <li>在应用内实时显示设备采集的加速度、角速度等数据</li>
+                <li>将采集数据保存在本地，供您导出后自行分析</li>
+                <li>分析崩溃日志以改进应用的稳定性</li>
+                <li>记住您的本地偏好设置</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>数据存储与安全</h2>
+            <ul>
+                <li>采集数据与配置文件均存储在您的设备本地</li>
+                <li>本应用不设服务器，不向任何第三方传输您的采集数据</li>
+                <li>崩溃信息通过加密通道传输至 SDK 服务端</li>
+                <li>您可通过删除应用内记录或卸载应用清除本地数据</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>信息共享与披露</h2>
+            <p>我们不会出售、出租或以其他方式向第三方提供您的信息。除以下情形外：</p>
+            <ul>
+                <li>已获得您的明确同意</li>
+                <li>根据法律法规规定，或应司法机关、行政机关的强制性要求</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>您的权利</h2>
+            <ul>
+                <li>关闭权限：可在「设置 - MATRIXEVAL」中随时关闭蓝牙权限</li>
+                <li>删除数据：删除应用内的采集记录，或卸载应用以清除全部本地数据</li>
+                <li>撤回同意：卸载应用即视为撤回同意，再次使用需重新阅读并同意本政策</li>
+                <li>查询与更正：本地数据可直接在应用内查看和管理</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>未成年人保护</h2>
+            <p>本应用为设备测试工具，不面向 14 周岁以下儿童单独提供服务。若您是未成年人，请在监护人指导下使用本应用。</p>
+        </div>
+
+        <div class="section">
+            <h2>本政策的更新</h2>
+            <p>若本政策发生重大变更，我们会在应用内以显著方式提示您。您继续使用本应用，即表示接受更新后的隐私政策。</p>
+        </div>
+
+        <div class="section">
+            <h2>联系我们</h2>
+            <div class="contact">
+                <h3>个人信息保护负责人 / 隐私问题反馈</h3>
+                <p>个人信息处理者：常州坤维传感科技有限公司</p>
+                <p>统一社会信用代码：91320412MA1XD6DN7B</p>
+                <p>注册地址：武进国家高新技术产业开发区西湖路8号《津通国际工业园》6号标准厂房B区西侧二层</p>
+                <p>邮箱：kw@kunweitech.com</p>
+                <p>客服电话：4006190058</p>
+                <p>我们将在收到您的请求并核实您的身份后 15 个工作日内予以答复。</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 常州坤维传感科技有限公司 版权所有</p>
+            <p>本隐私政策可能会不时更新，请以应用内展示的最新版本为准。</p>
+        </div>
+    </div>
+</body>
+</html>
